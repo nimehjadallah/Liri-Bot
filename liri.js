@@ -1,8 +1,8 @@
 require("dotenv").config();
 var keys = require("./keys.js");
-// var request= require("request");
+var request= require("request");
 var Spotify = require("node-spotify-api");
-// var fs = request("fs");
+var fs = require("fs");
 var axios = require("axios");
 
 var moment = require("moment");
@@ -15,7 +15,7 @@ function runLiri(command, userInput){
         spotify(userInput);
         break;
 
-        case "concert-this":
+        case "concert-this": /*this is not working for all bands!*/
         bandsInTown(userInput);
         break;
 
@@ -45,7 +45,7 @@ if (!userInput){
           return console.log('Error occurred: ' + err);
         }
        
-      console.log(data);
+    //   console.log(data);
     //   code goes here 
     console.log("Artist(s) Name: " + data.tracks.items[0].album.artists[0].name + "\n");
     console.log("Song's Name: " + data.tracks.items[0].name+"\n");
@@ -66,7 +66,7 @@ function bandsInTown(artist){
       console.log(response);
     console.log("Name of the Venue:" + response.data[0].venue.name + "\n");
     console.log("Venue Location:" + response.data[0].venue.city + "\n");
-    console.log("Date of events:" + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\n");
+    console.log("Date of events:" + moment(response.data[0].datetime).format("MM/DD/YYYY") + "\n");
 
 
   });
@@ -92,7 +92,22 @@ function OMDB(movie){
         console.log("Plot: " + response.data.Plot + "\n");
         console.log("Actors: " + response.data.Actors+ "\n");
     });
-}
+};
+
+function random(){
+    fs.readFile("random.txt", "utf8",function(error,data){
+        if (error){
+            return console.log(error);
+        } else {
+            console.log(data);
+            var randomData = data.split(",");
+            runLiri(random[0],randomData[1]);
+        }
+        
+    });
+
+};
+
 
 runLiri(command, userInput);
 
