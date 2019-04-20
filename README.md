@@ -29,8 +29,7 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command l
 2. `node liri.js concert-this <artist/band-name>`
     * This command searches the Bands in Town Artist Events API through Axios (`"https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=" + keys.bands.id`) and returns events the artist is appearing at in the near future. It includes `Venue Name: `, `Venue Location: `, and `Date of the Event: `.
 
-    PICTURE GOES HERE
-<!-- ![Example Concert Output](screenshots/example-concert-output.png) -->
+[bandsInTown](https://user-images.githubusercontent.com/45725048/56450033-ab2bf000-62ef-11e9-8441-3b7edff17266.png)
 
 
 
