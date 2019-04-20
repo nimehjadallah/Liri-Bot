@@ -32,21 +32,14 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command l
 ![bandsInTown](https://user-images.githubusercontent.com/45725048/56450033-ab2bf000-62ef-11e9-8441-3b7edff17266.png)
 
 
-
-
-
-
 3. `node liri.js movie-this <movie-name>`
     * This command searches the OMDB API through Axios (`"http://www.omdbapi.com/?t=" + userQuery + "&y=&plot=short&apikey=" + keys.movies.id`) and returns information about the movie the user input. It includes `Title: `, `Year Released: `, `IMDB Rating: `, `Rotten Tomatoes Rating: `, `Country/Countries Produced: `, `Language: `, `Plot: `, and `Cast: `. If no movie is entered, the API automatically searches Mr. Nobody for the user, as well as letting them know that they should check it out, notifying the user that it's on Netflix, and providing a link to the IMDB page for the movie.
 
-        PICTURE GOES HERE
+![movie(Default)](https://user-images.githubusercontent.com/45725048/56450085-1d9cd000-62f0-11e9-8a2a-a14d1ca9e04a.png)
+![movie](https://user-images.githubusercontent.com/45725048/56450087-1d9cd000-62f0-11e9-8c89-af9d2bbce859.png)
 
     
-    <!-- ![Default Movie Output](screenshots/default-movie-output.png)
-
-    ![Example Movie Output](screenshots/example-movie-output.png) -->
-
-
+   
 4. `node liri.js do-what-it-says`
     * Using the `fs` Node package, LIRI accesses the text in random.txt and uses that to call one of LIRI's commands for the user. It runs `spotify-this-song` for "I Want it That Way" by the Backstreet Boys, but can also be modified to search for a specific movie for movie-this, or a specific artist for concert-this.
 
