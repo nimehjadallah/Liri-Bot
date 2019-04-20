@@ -21,12 +21,10 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command l
 1. `node liri.js spotify-this-song <song-name>`
     * This command searches the Spotify Web API that runs on Node.js (`spotify.search({type: "track", query: userQuery}, function(err, data)`) and returns information about the song the user input. It includes `Artist: `, `Song Name: `, and `Preview Link: `, and `Album: `. If no artist is entered, the API automatically searches "The Sign" by Ace of Base for the user.
 
-    PICTURE GOES HERE
+![spotify(Default)](https://user-images.githubusercontent.com/45725048/56450016-67d18180-62ef-11e9-9ff5-5a274f8a09cf.png)
+![spotify](https://user-images.githubusercontent.com/45725048/56450017-6902ae80-62ef-11e9-97e7-a022bfbb1906.png)
 
-<!-- 
-    ![Default Song Output](screenshots/default-spotify-output.png)
 
-    ![Example Song Output](screenshots/example-song-output.png) -->
 
 2. `node liri.js concert-this <artist/band-name>`
     * This command searches the Bands in Town Artist Events API through Axios (`"https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=" + keys.bands.id`) and returns events the artist is appearing at in the near future. It includes `Venue Name: `, `Venue Location: `, and `Date of the Event: `.
